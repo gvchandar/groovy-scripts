@@ -1,3 +1,5 @@
+package com.dcc
+
 class ComponentInfo {
   String name;
   String shortName;

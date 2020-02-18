@@ -1,6 +1,5 @@
 //src/com/dcc/DTRBuildInfo.groovy
 package com.dcc
-import com.dcc.ComponentInfo 
 
 // DTR Build Information
 class DTRBuildInfo {
