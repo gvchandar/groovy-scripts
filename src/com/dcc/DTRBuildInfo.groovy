@@ -1,5 +1,6 @@
 //src/com/dcc/DTRBuildInfo.groovy
 package com.dcc
+import com.dcc.ComponentInfo 
 
 // DTR Build Information
 class DTRBuildInfo {
@@ -24,7 +25,7 @@ class DTRBuildInfo {
     return this.version;
   }
 
-  void addComponent(com.dcc.ComponentInfo component){
+  void addComponent(ComponentInfo component){
     componentList.add(component)
   }
 
