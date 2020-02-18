@@ -1,4 +1,4 @@
-//src/org/dcc/Point.groovy
+//src/com/dcc/DTRBuildInfo.groovy
 package com.dcc
 
 // DTR Build Information
@@ -6,7 +6,7 @@ class DTRBuildInfo {
   String environment;
   String version;
   String DTRURL;
-  ArrayList componentlist = new ArrayList();
+  def componentList = []
 
   void setEnvironment(String pEnvironment) {
     environment = pEnvironment;
@@ -22,6 +22,10 @@ class DTRBuildInfo {
 	
   String getVersion() {
     return this.version;
+  }
+
+  void addComponent(ComponentInfo component){
+    componentList.add(component)
   }
 
 }
