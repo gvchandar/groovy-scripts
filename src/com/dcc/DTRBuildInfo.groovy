@@ -6,7 +6,7 @@ class DTRBuildInfo {
   String environment;
   String version;
   String DTRURL;
-  def componentlist = []
+  ArrayList componentlist = new ArrayList();
 
   void setEnvironment(String pEnvironment) {
     environment = pEnvironment;
