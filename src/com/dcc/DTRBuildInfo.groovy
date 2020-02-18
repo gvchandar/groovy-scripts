@@ -1,5 +1,5 @@
 //src/org/dcc/Point.groovy
-package org.dcc
+package com.dcc
 
 // DTR Build Information
 class DTRBuildInfo {
