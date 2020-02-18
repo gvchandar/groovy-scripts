@@ -24,7 +24,7 @@ class DTRBuildInfo {
     return this.version;
   }
 
-  void addComponent(ComponentInfo component){
+  void addComponent(com.dcc.ComponentInfo component){
     componentList.add(component)
   }
 
