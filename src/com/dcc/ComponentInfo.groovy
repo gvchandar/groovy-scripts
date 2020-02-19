@@ -9,6 +9,12 @@ class ComponentInfo {
   String folderPath;
   String dockerRepo;  
 
+  ComponentInfo(name, tag, subversion) {          
+    this.name = name
+    this.tag = tag
+    this.subversion = subversion
+  }
+
   void setName(String pname) {
     name = pname;
   }
