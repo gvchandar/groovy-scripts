@@ -2,7 +2,6 @@
 
 
 
-static final String DEFAULT = 'default'
 
 DCO_DEV_DTR   = "10.0.16.41"
 DCO_EIT_DTR   = "10.1.16.50"
@@ -24,6 +23,7 @@ CP_PRODB_DTR  = "10.1.5.149"
 
 
 def call(String name = 'human') {
+  static final String DEFAULT = 'default'
   echo "Hello, ${name}."
   echo  DEFAULT
 }
