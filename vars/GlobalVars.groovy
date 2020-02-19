@@ -16,11 +16,13 @@ class GlobalVars {
   static final String CP_UITB_DTR   = "10.1.21.152"
   static final String CP_PRODA_DTR  = "10.0.5.145"
   static final String CP_PRODB_DTR  = "10.1.5.149"
-  def DEPLOYMENT_MAP = [:]
-  DEPLOYMENT_MAP.put("DCO-DEV", DCO_DEV_DTR)
+  static final DTR_MAP = [
+    "DCO_DEV": DCO_DEV_DTR,
+    "DCO_EIT": DCO_EIT_DTR
+  ]
 
-  static String getDTR() {
-    return DCO_EIT_DTR;
+  static String getDTR(String environment) {
+    return DTR_MAP.get(environment)
   }
 
 }
