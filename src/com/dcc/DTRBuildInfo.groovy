@@ -28,5 +28,10 @@ class DTRBuildInfo implements Serializable
   void addComponent(ComponentInfo component){
     componentList.add(component)
   }
+
+  static String getJSON() {
+    def output = JsonOutput.toJson([name: 'John', ID: 1]
+    return output
+  }
   
 }
