@@ -54,7 +54,7 @@ class GlobalVars {
   // Docker images repository is defined for each application separately
   
 
-  static final String GIT_DOCKERFILES_BASE_URL = "git@DCO-MGTB-NOC01.dco.local:dcc/docker/
+  static final String GIT_DOCKERFILES_BASE_URL = "git@DCO-MGTB-NOC01.dco.local:dcc/docker"
   static final String GIT_DOCKERFILES_BRANCH   = "DCCRUN-277"
 
 
