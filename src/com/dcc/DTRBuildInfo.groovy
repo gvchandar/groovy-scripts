@@ -34,5 +34,9 @@ class DTRBuildInfo implements Serializable
     def output = JsonOutput.toJson([name: 'John', ID: 1])
     return output
   }
+  static String getJSON(DTRBuildInfo dtrbuild) {
+    def output = JsonOutput.toJson(dtrbuild)
+    return output
+  }
   
 }
