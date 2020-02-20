@@ -81,7 +81,7 @@ class GlobalVars {
 
 
   static String getGITPath(String application) {
-    return GITPATH_MAP.get(application)
+    return GIT_PATH_MAP.get(application)
   }
 
 
