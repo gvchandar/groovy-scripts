@@ -84,5 +84,9 @@ class GlobalVars {
     return GIT_PATH_MAP.get(application)
   }
 
+  static String getJSON() {
+    def output = JsonOutput.toJson([name: 'John', ID: 1]
+    return output
+  }
 
 }

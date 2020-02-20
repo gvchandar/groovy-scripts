@@ -28,5 +28,5 @@ class DTRBuildInfo implements Serializable
   void addComponent(ComponentInfo component){
     componentList.add(component)
   }
-
+  
 }
