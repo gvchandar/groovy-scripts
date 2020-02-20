@@ -1,6 +1,7 @@
 package com.dcc
 
-class ComponentInfo {
+class ComponentInfo implements Serializable
+{
   String name;
   String shortName;
   String subversion;

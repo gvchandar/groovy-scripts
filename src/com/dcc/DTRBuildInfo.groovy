@@ -2,7 +2,8 @@
 package com.dcc
 
 // DTR Build Information
-class DTRBuildInfo {
+class DTRBuildInfo implements Serializable
+{
   String environment;
   String version;
   String DTRURL;
