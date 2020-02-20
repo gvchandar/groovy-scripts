@@ -19,6 +19,8 @@ class WriteObject
     }
     finally { 
      os?.close() 
+     println(" FINALLY of WriteObject")
+
     }
     assert objectStore.exists()    
   }

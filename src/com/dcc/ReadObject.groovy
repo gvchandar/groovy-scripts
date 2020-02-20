@@ -18,6 +18,7 @@ class ReadObject
     } 
     finally { 
       is?.close() 
+      println(" FINALLY of ReadObject")
     }   
   }
 }
