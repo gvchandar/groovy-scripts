@@ -1,5 +1,6 @@
 //src/com/dcc/DTRBuildInfo.groovy
 package com.dcc
+import groovy.json.JsonOutput
 
 // DTR Build Information
 class DTRBuildInfo implements Serializable
