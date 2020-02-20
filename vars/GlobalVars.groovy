@@ -1,7 +1,6 @@
 
 class GlobalVars {
-  # Defining DTR repository IP for all the environments
-  # and the map
+  // Defining DTR repository IP for all the environments and the corresponding map
   static final String DCO_DEV_DTR   = "10.0.16.38"
   static final String DCO_EIT_DTR   = "10.1.16.50"
   static final String DCO_SITA_DTR  = "10.0.12.45"
@@ -37,11 +36,11 @@ class GlobalVars {
     "CP_PRODB"  : CP_UITB_DTR
   ]
   
-  # Initial release file is uploaded to nexus as a single zip file  
+  // Initial release file is uploaded to nexus as a single zip file  
   static final String NEXUS_BASE_URL = "https://nexus.k8s.dco.local/repository"
 
-  # Defining sub path within the main release file
-  # We get release as a single zip , containing all the application files in it 
+  // Defining sub path within the main release file
+  // We get release as a single zip , containing all the application files in it 
 
   static final String DCO_REQUEST_MANAGER_PATH =  "dco-request-manager"
   static final String DCO_CONFIG_MANAGER_PATH  =  "dco-configuration-manager"
@@ -52,7 +51,7 @@ class GlobalVars {
     "request-manager"  : DCO_REQUEST_MANAGER_PATH
   ]
 
-  # Docker images repository is defined for each application separately
+  // Docker images repository is defined for each application separately
   
 
   static final String GIT_DOCKERFILES_BASE_URL = "git@DCO-MGTB-NOC01.dco.local:dcc/docker/
