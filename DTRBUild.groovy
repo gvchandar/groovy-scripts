@@ -36,10 +36,11 @@ class DTRBuild {
     println(" Print JSON")
     println(dtrbuild_json)
     def dtrbuild_object = jsonSlurper.parseText(dtrbuild_json)
-    assert dtrbuild_object instanceof DTRBuildInfo
+    //assert dtrbuild_object instanceof DTRBuildInfo
     println(" Print Object")
-    println(dtrbuild_object)
-    //println("enviornment is :"dtrbuild_object.getEnvironment())
+    //println(dtrbuild_object)
+    println("enviornment is :"dtrbuild_object.environment)
+    println("version is :"dtrbuild_object.version)
     //println("version is :" dtrbuild_object.getVersion())
     //println("component list is :" dtrbuild_object.componentList)
 
