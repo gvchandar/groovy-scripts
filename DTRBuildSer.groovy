@@ -3,88 +3,48 @@ import groovy.json.JsonSlurper
 import groovy.json.JsonParserType
 class DTRBuildSer {
   static void main(String[] args) {
-    /*
-    def output = JsonOutput.toJson([name: 'John', ID: 1])
-    println(output);  
-    
-    Convert Object to JSON
-    def json = JsonOutput.toJson([ new Person(name: 'John',interests: ["a","b","c"]), \
-                                   new Person(name: 'Max' ,interests: ["d","e","f"]) ])
-    assert json == '[{"name":"John"},{"name":"Max"}]'
-    JsonOutput.prettyPrint(json)
-    println(json);
-    Convert JSON to Object
-    def jsonSlurper = new JsonSlurper()
-    def object = jsonSlurper.parseText(json)
-    println(object);
-    */
-    def cleanup = new ComponentInfo(name:"cleanup",tag: "5.2",gitPath:"gitPathcleanup")
-    def manager = new ComponentInfo(name:"manager",tag: "5.4",gitPath:"gitPathmanager")
-    
-    def cleanupmap= [
-        'name': 'dco-cleanup',
-        'subversion': '2.5',
-        'tag': 'auto'
-    ] 
-
-   def requestmanagermap= [
-        'name': 'dco-request-manager',
-        'subversion': '2.8',
-        'tag': 'auto-clean'
-    ]
-    //def dtrbuild = new DTRBuildInfo(environment:"DEV",version:"5.9",\
-    //                   componentList:[cleanupmap,requestmanagermap])
+    def cleanup= new ComponentInfo(
+        'name':'dco-cleanup',\
+        'shortName':'cleanup',\
+        'subversion':'5.3',\
+        'tag':'auto1',\
+        'gitPath':'cleanuprepo',\
+        'folderPath':'cleanupFolder',\
+        'dockerRepo':'http://cleanupdockerrepo'
+    ) 
+    def manager= new ComponentInfo(
+        'name':'dco-manager',\
+        'shortName':'manager',\
+        'subversion':'5.6',\
+        'tag':'auto2',\
+        'gitPath':'managerrepo',\
+        'folderPath':'managerFolder',\
+        'dockerRepo':'http://managerdockerrepo'
+    ) 
     def dtrbuild = new DTRBuildInfo(environment:"DEV",version:"5.9",\
                        componentList:[cleanup,manager])
     def dtrbuild_json = JsonOutput.toJson(dtrbuild)
-    //println(" Print JSON")
-    //println(dtrbuild_json)
-
 
     JsonSlurper slurper = new JsonSlurper().setType( JsonParserType.INDEX_OVERLAY )
     def reloadobject = slurper.parseText(dtrbuild_json)
     DTRBuildInfo reloadDTRBuildInfo = new DTRBuildInfo(reloadobject)
 
-    println(" Print Object")
     println("Environment $reloadDTRBuildInfo.environment")
     println("Version $reloadDTRBuildInfo.version")
     println("Component List $reloadDTRBuildInfo.componentList")
     
     reloadDTRBuildInfo.componentList.each {
-      println"Object is:"
-      println "${it}"
       def componentSplit = "${it}".split(',');   
-      for( String values : componentSplit )
-      println(values);
-
+      println("dockerRepo:" + componentSplit[0].substring(componentSplit[0].indexOf(':')+1))
+      println("gitPath:" + componentSplit[1].substring(componentSplit[1].indexOf(':')+1))
+      println("folderPath:" + componentSplit[2].substring(componentSplit[2].indexOf(':')+1))
+      println("subversion: " + componentSplit[3].substring(componentSplit[3].indexOf(':')+1))
+      println("name: " + componentSplit[4].substring(componentSplit[4].indexOf(':')+1))
+      println("tag:" + componentSplit[5].substring(componentSplit[5].indexOf(':')+1))
+      println("shortName:" + componentSplit[6].substring(componentSplit[6].indexOf(':')+1,\
+               componentSplit[6].length()-1))
     }
-    
-
-    //assert dtrbuild_object instanceof DTRBuildInfo
-    /*
-    println(dtrbuild_object)
-    println(dtrbuild_object.environment)
-    println(dtrbuild_object.version)
-    println(dtrbuild_object.componentList)
-    def componentmap = [:]
-    dtrbuild_object.componentList.each {
-      componentmap = "${it}"
-      println(componentmap)
-      componentmap.each { 
-        println "${it}"
-      }
-    }
-    */
-    //println("version is :"dtrbuild_object.version)
-    //println("version is :" dtrbuild_object.getVersion())
-    //println("component list is :" dtrbuild_object.componentList)
-
-   }
-}
-
-class Person {
-    String name
-    List interests
+  }
 }
 
 class DTRBuildInfo{
@@ -92,12 +52,6 @@ class DTRBuildInfo{
   String version;
   String DTRURL;
   def componentList = []
-  String getEnvironment() {
-    return this.environment;
-  }
-  String getVersion() {
-    return this.version;
-  }
 }
 
 
@@ -110,4 +64,5 @@ class ComponentInfo
   String gitPath;
   String folderPath;
   String dockerRepo;
+
 }

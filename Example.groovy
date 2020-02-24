@@ -9,6 +9,9 @@ class Example {
                           favoriteUrl: new URL('http://groovy-lang.org/'))
     def json = JsonOutput.toJson(person);
     println(person);
+    def a = "hello world" .split(" ");
+    println a[0] ;
+    println a[1];
 
    }
 }
