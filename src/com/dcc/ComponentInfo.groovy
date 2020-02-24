@@ -9,12 +9,15 @@ class ComponentInfo implements Serializable
   String gitPath;
   String folderPath;
   String dockerRepo;  
-  
 
   ComponentInfo(name, subversion,tag) {          
         this.name = name
+        this.shortName = null
         this.subversion = subversion
         this.tag = tag
+        this.gitPath = null
+        this.tag = tag
+        this.dockerRepo = null
     }
 
 
