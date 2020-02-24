@@ -1,6 +1,6 @@
 import groovy.json.JsonOutput 
 import groovy.json.JsonSlurper
-class DTRBuild {
+class DTRBuildSer {
   static void main(String[] args) {
     def output = JsonOutput.toJson([name: 'John', ID: 1])
     println(output);  
