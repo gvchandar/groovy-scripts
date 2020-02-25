@@ -3,7 +3,7 @@ package com.dcc
 import groovy.json.JsonOutput
 
 // DTR Build Information
-class DTRBuildInfo implements Serializable
+class DTRBuildInfo 
 {
   String environment;
   String version;

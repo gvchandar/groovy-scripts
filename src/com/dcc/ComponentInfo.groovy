@@ -1,6 +1,6 @@
 package com.dcc
 
-class ComponentInfo implements Serializable
+class ComponentInfo 
 {
   String name;
   String shortName;
